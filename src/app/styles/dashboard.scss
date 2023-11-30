@@ -1,0 +1,50 @@
+@import './color.scss';
+
+.analytics-main {
+    display    : flex;
+    flex-wrap  : wrap;
+    margin-top : 25px;
+    margin-left: 30px;
+    .title {
+        display       : flex;
+        flex-wrap     : wrap;
+        font-size     : 20px;
+        font-weight   : 500;
+        margin-bottom : 16px;
+        text-transform: capitalize;
+    }
+}
+
+.user-analytics-main {
+    display    : flex;
+    flex-wrap  : wrap;
+    margin-top : 25px;
+    margin-left: 30px;
+
+    .title {
+        display       : flex;
+        flex-wrap     : wrap;
+        font-size     : 20px;
+        font-weight   : 500;
+        margin-bottom : 16px;
+        text-transform: capitalize;
+    }
+}
+
+.dashboard-card {
+    flex-wrap       : wrap;
+    align-items     : center;
+    justify-content : space-between;
+    padding         : 24px;
+    background-color: $dashboard-card-back-ground-color;
+
+    .dashboard-box {
+        display    : flex;
+        flex-wrap  : wrap;
+        align-items: center;
+
+        .title-name {
+            color: $text-color;
+        }
+    }
+}

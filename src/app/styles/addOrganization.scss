@@ -1,0 +1,62 @@
+@import "./color.scss";
+
+.organizationDetails-details {
+    margin-top  : 25px;
+    margin-left : 20px;
+    margin-right: 20px;
+
+    .organizationDetails-titles {
+        display       : flex;
+        flex-wrap     : wrap;
+        font-size     : 18px;
+        font-weight   : 500;
+        margin-left   : 10px;
+        margin-right  : 10px;
+        margin-top    : 10px;
+        margin-bottom : 10px;
+        text-transform: capitalize;
+    }
+    .back-btn {
+        color : $black;
+        cursor: pointer;
+    }
+    .organizationDetails-grid {
+        display    : flex;
+        align-items: center;
+        margin-left: 12px;
+    }
+    .organizationDetails-field {
+        margin-bottom: 25px;
+        margin-left  : 15px;
+        margin-right : 15px;
+    }
+    .organizationDetails-fields-value {
+        text-align   : start;
+        font-size    : 16px;
+        margin-top   : 3px;
+        margin-bottom: 2px;
+    }
+    .addOrganization-btn {
+        display        : flex;
+        justify-content: flex-end;
+        margin-right   : 50px;
+        margin-bottom  : 25px;
+    }
+    .cancle-button {
+        margin-right: 30px;
+        margin-left : 20px;
+        border       : 1px solid $black;
+        color: $black;
+
+    }
+    .profile-card {
+        margin-bottom: 25px;
+        margin-left  : 15px;
+        margin-right : 15px;
+        border       : 1px solid $border-color;
+    }
+    .MuiFormHelperText-root {
+        color: $helper-text;
+    }
+
+}

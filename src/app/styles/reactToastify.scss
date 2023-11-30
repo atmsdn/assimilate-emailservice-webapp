@@ -1,0 +1,25 @@
+.custom-toast {
+    .Toastify__toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 300px;
+      z-index: 9999;
+    }
+    .Toastify__toast--success {
+      background-color: #28a745;
+      color: #fff;
+    }
+  
+    .Toastify__toast-body {
+      font-size: 14px;
+    }
+    .toast-message {
+        background: darkblue;
+        color: #fff;
+        font-size: 20px;
+        width: 34vw;
+        padding: 30px 20px;
+      }
+  }
+  

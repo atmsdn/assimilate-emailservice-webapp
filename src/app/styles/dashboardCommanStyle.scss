@@ -1,0 +1,39 @@
+/* dashboardCommanStyle.scss */
+.main-box {
+  padding: 20px;
+}
+
+.device-top-title {
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+  margin-bottom  : 10px;
+}
+
+.sub-title {
+  font-size   : 20px;
+  padding-left: 10px;
+}
+
+.devider-item {
+  margin: 10px 0;
+}
+
+.dashboard-table {
+  font-size  : 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.view-btn-amc {
+  background-color: #2196f3;
+  color           : #fff;
+
+  &:hover {
+    background-color: #1565c0;
+  }
+}
+
+.view-btn {
+  color: #2196f3;
+}
