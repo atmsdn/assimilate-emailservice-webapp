@@ -1,0 +1,174 @@
+<div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between mb-3">
+        <app-search></app-search>
+        <div class="d-flex">
+          <button class="btn btn-secondary btn-sm" style="box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1)" (click)="navigateToAddOrg()">
+            <i class="pi pi-plus small-icon"></i>
+            Add Organization
+          </button>
+        </div>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Sr.No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Mobile Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Driving Licence</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <!-- <tbody *ngIf="!isLoading">
+          <tr *ngFor="let driver of driverList; let i = index">
+            <td>{{ (pageNumber - 1) * pageSize + i + 1  }}</td>
+            <td>{{ driver?.name || '--' }}</td>
+            <td>{{ driver?.phoneNumber || '-' }}</td>
+            <td>{{ driver?.email || '-' }}</td>
+            <td>{{ driver?.drivingLicence || '-' }}</td>
+            <td>
+              <span type="button" class="m-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-eye"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+                </svg>
+              </span>
+              <span type="button" class="ms-2" (click)="navigateToEditDriver(driver)">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-edit"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                  <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                  <path d="M16 5l3 3" />
+                </svg>
+              </span>
+              <span
+                type="button"
+                class="ms-2 text-danger"
+                (click)="open(content, driver.id)"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-trash"
+                  style="stroke: red"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 7l16 0" />
+                  <path d="M10 11l0 6" />
+                  <path d="M14 11l0 6" />
+                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                </svg>
+              </span>
+            </td>
+          </tr>
+        </tbody> -->
+        <!-- <tbody>
+          @if (!isLoading && driverList.length === 0) {
+            <tr>
+              <td colspan="7" class="text-center" style="color: red">Driver Not Found</td>
+            </tr>
+          }
+        </tbody> -->
+      </table>
+      <div class="mt-2" *ngIf="isLoading">
+        <ngx-skeleton-loader
+          count="4"
+          [theme]="{
+            width: '100%',
+            'border-radius': '10px',
+            height: '4px',
+            padding: '20px'
+          }"
+        ></ngx-skeleton-loader>
+      </div>
+    </div>
+  
+    <!-- <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [class.disabled]="pageNumber === 1">
+          <a
+            class="page-link text-dark"
+            tabindex="-1"
+            [attr.aria-disabled]="pageNumber === 1 ? 'true' : null"
+            (click)="pageNumber > 1 && goToPage(pageNumber - 1)"
+            aria-label="Previous"
+          >
+            <span aria-hidden="true">&laquo;</span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+        </li>
+  
+        <ng-container *ngFor="let page of pages">
+          <ng-container *ngIf="page !== -1; else ellipsis">
+            <li class="page-item" [class.active]="pageNumber === page">
+              <a class="page-link" [ngClass]="{ 'bg-secondary text-white': pageNumber === page }" (click)="goToPage(page)">
+                {{ page }}
+              </a>
+            </li>
+          </ng-container>
+          <ng-template #ellipsis>
+            <li class="page-item disabled">
+              <span class="page-link">...</span>
+            </li>
+          </ng-template>
+        </ng-container>
+  
+        <li class="page-item" [class.disabled]="pageNumber === count">
+          <a
+            class="page-link text-dark"
+            [attr.aria-disabled]="pageNumber === count ? 'true' : null"
+            (click)="pageNumber < count && goToPage(pageNumber + 1)"
+            aria-label="Next"
+          >
+            <span aria-hidden="true">&raquo;</span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </li>
+        <select
+          class="form-select form-select-sm ms-1 border-0 bg-body-secondary"
+          (change)="changedPageSize($event)"
+          style="width: auto; display: inline-block; cursor: pointer"
+        >
+          <option value="10" [selected]="pageSize === 10">10</option>
+          <option value="20" [selected]="pageSize === 20">20</option>
+          <option value="50" [selected]="pageSize === 50">50</option>
+        </select>
+      </ul>
+    </nav> -->
+  </div>
+  
+  

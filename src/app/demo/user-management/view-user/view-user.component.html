@@ -1,0 +1,40 @@
+<div class="card shadow-sm mb-4">
+  
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h4 class="mb-0">View User</h4>
+      <button class="btn btn-secondary btn-sm" (click)="navigateToBackUsers()">
+        <i class="bi bi-arrow-left-circle"></i>
+        <span>Back To List</span>
+      </button>
+    </div>
+
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-6 col-md-3 mb-3">
+        <div class="form-group">
+          <label><b>Name</b></label>
+          <p class="form-control-plaintext">{{ user?.userName || '--' }}</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 mb-3">
+        <div class="form-group">
+          <label><b>Phone Number:</b></label>
+          <p class="form-control-plaintext">{{ user?.phoneNumber || '--' }}</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 mb-3">
+        <div class="form-group">
+          <label><b>Email:</b></label>
+          <p class="form-control-plaintext">{{ user?.email || '--' }}</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 mb-3">
+        <div class="form-group">
+          <label><b>Role:</b></label>
+          <p class="form-control-plaintext">{{ user?.role?.name || '--' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
