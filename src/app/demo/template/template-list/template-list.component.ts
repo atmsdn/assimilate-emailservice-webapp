@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { SearchComponent } from 'src/app/theme/shared/components/search/search.component';
+import { TemplateService } from '../service/template.service';
 
 @Component({
   selector: 'app-template-list',
@@ -16,11 +17,12 @@ export class TemplateListComponent {
 
   isLoading: boolean = false;
 
-  constructor(private route: Router){
-
+  constructor(
+    private route: Router,
+    private templateService: TemplateService) {
   }
 
-  navigateToAddEmail(){
+  navigateToAddEmail() {
     this.route.navigate(['template/add'])
   }
 
