@@ -59,14 +59,17 @@ $input-border-focus: purple;
 .my-custom-form input:hover, 
 .my-custom-form textarea:hover, 
 .my-custom-form select:hover {
-  border-color:#8544f7!important;
+  border-color:#673ab7!important;
+  box-shadow: none !important;
   box-shadow: none !important; /* Remove the shadow effect */
 }
 
 .my-custom-form input:focus, 
 .my-custom-form textarea:focus, 
 .my-custom-form select:focus {
-  border-color: purple !important;
+  border-color: #673ab7 !important;
+  box-shadow: 0 0 0 0.2rem rgba(103, 58, 183, 0.25) !important;
+  border-color: #673ab7!important;
 }
 
 input::placeholder{
