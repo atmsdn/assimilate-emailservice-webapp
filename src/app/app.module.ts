@@ -22,6 +22,7 @@ import { HttpTokenInterceptor } from './theme/shared/interceptor/http-token.inte
 import { AuthGuard } from './theme/shared/gaurds/auth.guard';
 import { GuestComponent } from './theme/layout/guest/guest.component';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { ToastrModule } from 'ngx-toastr';
     ConfigurationComponent,
     GuestComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule, HttpClientModule,   ToastrModule.forRoot(),],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule, HttpClientModule,   ToastrModule.forRoot(),NgxEditorModule],
   bootstrap: [AppComponent],
   providers: [NavigationItem,
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },

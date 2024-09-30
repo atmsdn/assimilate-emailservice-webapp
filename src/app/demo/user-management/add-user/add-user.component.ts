@@ -4,7 +4,7 @@ import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, 
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UserService } from '../service/user.service';
 import { HttpClient } from '@angular/common/http';
-import { NgSelectConfig, NgSelectModule } from '@ng-select/ng-select';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { DisallowSpaceDirective } from 'src/app/theme/shared/directives/disallow-space.directive';
 import { MiddlespacesAllowDirective } from 'src/app/theme/shared/directives/middlespaces-allow.directive';
 import { CapitalizeFirstDirective } from 'src/app/theme/shared/directives/capitalize-first.directive';
